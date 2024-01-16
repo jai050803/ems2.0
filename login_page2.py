@@ -4,6 +4,7 @@ from tkinter import *
 from tkinter import messagebox
 import mysql.connector
 import bcrypt
+import subprocess
 
 app = ctk.CTk()
 app.title("Welcome to EMS App")
