@@ -56,6 +56,7 @@ def login():
             hashed_password = result[0]
             if bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8')):
                 messagebox.showinfo("Success", "Login successful!")
+                open_main_body()
             else:
                 messagebox.showerror("Error", "Invalid username or password")
         else:
@@ -63,6 +64,9 @@ def login():
 
     except mysql.connector.Error as err:
         messagebox.showerror("MySQL Error", f"Error: {err}")
+        
+def open_main_body():
+    subprocess.run(["python", "EMS_Operate(1).py"])
 
 def open_login_window():
     login_window = ctk.CTk()
