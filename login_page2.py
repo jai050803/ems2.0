@@ -4,7 +4,8 @@ from tkinter import *
 from tkinter import messagebox
 import mysql.connector
 import bcrypt
-import subprocess
+import os
+
 
 app = ctk.CTk()
 app.title("Welcome to EMS App")
@@ -43,6 +44,14 @@ def signup():
             messagebox.showerror("MySQL Error", f"Error: {err}")
     else:
         messagebox.showerror("Error", "Password and Confirm Password do not match")
+        
+def open_main_body():
+    script_path = "C:/Users/sjai5/Desktop/ems2.0/desktop/EMS2.0/ems.py"
+    
+    try:
+        os.system(f"python {script_path}")
+    except Exception as e:
+        print(f"Error opening script: {e}")
 
 def login():
     username = login_username_entry.get()
@@ -64,9 +73,6 @@ def login():
 
     except mysql.connector.Error as err:
         messagebox.showerror("MySQL Error", f"Error: {err}")
-        
-def open_main_body():
-    subprocess.run(["python", "EMS_Operate(1).py"])
 
 def open_login_window():
     login_window = ctk.CTk()
