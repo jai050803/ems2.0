@@ -6,7 +6,7 @@ import mysql.connector
 import bcrypt
 
 app = ctk.CTk()
-app.title("login page")
+app.title("Welcome to EMS App")
 app.geometry("700x600")
 app.config(bg="#001220")
 
@@ -88,8 +88,8 @@ signup_button.place(x=115, y= 430)
 login_label = ctk.CTkLabel(frame2, font=font3, text='Already have an account?', text_color="#fff")
 login_label.place(x=100,y=470)
 
-login_link = ctk.CTkLabel(frame2, font=font3, text='Login', text_color="#fff",
-                           cursor="hand2", command=go_to_login)
-login_link.place(x=270, y=470)
+login_button = ctk.CTkButton(frame2, font=font2, text_color="#fff", text='Login Here', fg_color="#00965d", 
+                            hover_color='#006e44',bg_color="#121111", cursor="hand2",corner_radius=5, width=120)
+login_button.place(x=115, y= 510)
 
 app.mainloop()
